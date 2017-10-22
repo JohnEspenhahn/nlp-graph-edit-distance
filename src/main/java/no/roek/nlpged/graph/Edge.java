@@ -1,10 +1,11 @@
 package no.roek.nlpged.graph;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Edge {
+public class Edge implements Serializable {
 
 	protected String id;
 	protected Node from;

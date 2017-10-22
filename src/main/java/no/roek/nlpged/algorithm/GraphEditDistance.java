@@ -1,13 +1,14 @@
 package no.roek.nlpged.algorithm;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.konstantinosnedas.HungarianAlgorithm;
 
 import no.roek.nlpged.graph.Edge;
 import no.roek.nlpged.graph.Graph;
 import no.roek.nlpged.graph.Node;
-
-import com.konstantinosnedas.HungarianAlgorithm;
 
 
 public class GraphEditDistance {
@@ -32,6 +33,10 @@ public class GraphEditDistance {
 
 	public GraphEditDistance(Graph g1, Graph g2, Map<String, Double> posEditWeights, Map<String, Double> deprelEditWeights) {
 		this(g1, g2, 2, 1, 1, posEditWeights, deprelEditWeights);
+	}
+	
+	public GraphEditDistance(Graph g1, Graph g2) {
+		this(g1, g2, new HashMap<>(), new HashMap<>());
 	}
 
 	public double getNormalizedDistance() {
