@@ -57,6 +57,7 @@ public class GraphEditDistance {
 		double sum = 0; 
 		for (int i=0; i<assignment.length; i++){
 			sum =  (sum + costMatrix[assignment[i][0]][assignment[i][1]]);
+			System.out.printf("[%d][%d] = %f\n", assignment[i][0], assignment[i][1], costMatrix[assignment[i][0]][assignment[i][1]]);
 		}
 
 		return sum;
@@ -118,6 +119,7 @@ public class GraphEditDistance {
 	}
 
 	public double getSubstituteCost(Node node1, Node node2) {
+		// Function of the number of edges
 		double diff = (getRelabelCost(node1, node2) + getEdgeDiff(node1, node2)) / 2;
 		return diff * SUBSTITUTE_COST;
 	}
